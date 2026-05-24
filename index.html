@@ -145,6 +145,11 @@ async function register(){
         return;
     }
 
+    if(password.length < 8){
+    alert("Password must be at least 8 characters long");
+    return;
+}
+
     const { data: existingUsers } = await supabaseClient
         .from("rehub_users")
         .select("*")
