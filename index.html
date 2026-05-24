@@ -198,7 +198,18 @@ async function login(){
         JSON.stringify(data[0])
     );
 
-    alert("Welcome back " + data[0].username + "!");
+   const user = data[0];
+
+localStorage.setItem(
+    "rehub_user",
+    JSON.stringify(user)
+);
+
+window.location.href =
+"rebandits://login?username=" +
+encodeURIComponent(user.username) +
+"&id=" +
+encodeURIComponent(user.id);
 }
 
 async function loadLeaderboard(){
