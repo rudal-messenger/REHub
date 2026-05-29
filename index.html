@@ -3,41 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>REHub</title>
+<title>RE:Hub</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
 <style>
+@font-face{
+    font-family:'Play';
+    src:url('Play/Play-Regular.ttf') format('truetype');
+    font-weight:400;
+}
+@font-face{
+    font-family:'Play';
+    src:url('Play/Play-Bold.ttf') format('truetype');
+    font-weight:700;
+}
+:root{
+    --accent:#22ABE3;
+}
+
 body{
     margin:0;
-    background:#101010;
+    background:#000000;
     color:white;
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:'Play', Arial, Helvetica, sans-serif;
 }
 
 header{
-    background:#181818;
-    padding:20px;
-    text-align:center;
-    border-bottom:2px solid #ff5e00;
+    background:#000000;
+    padding:20px 30px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    border-bottom:2px solid var(--accent);
+}
+
+.logo{
+    width:64px;
+    height:64px;
+    object-fit:contain;
+}
+
+.header-content{
+    text-align:left;
 }
 
 h1{
     margin:0;
-    color:#ff5e00;
-    font-size:48px;
+    color:var(--accent);
+    font-size:40px;
+    font-weight:700;
+    letter-spacing:2px;
 }
 
 .tagline{
     color:#cfcfcf;
-    margin-top:10px;
-    font-size:18px;
+    margin-top:8px;
+    font-size:15px;
 }
 
 .container{
     max-width:500px;
     margin:50px auto;
-    background:#1b1b1b;
+    background:#000000;
     padding:30px;
     border-radius:12px;
     box-shadow:0 0 25px rgba(0,0,0,0.5);
@@ -47,10 +75,10 @@ input{
     width:100%;
     padding:14px;
     margin-top:12px;
-    background:#2b2b2b;
+    background:#131313;
     border:none;
     color:white;
-    border-radius:8px;
+    border-radius:0px;
     box-sizing:border-box;
     font-size:16px;
 }
@@ -61,15 +89,17 @@ button{
     margin-top:16px;
     border:none;
     border-radius:8px;
-    background:#ff5e00;
+    background:var(--accent);
     color:white;
     font-size:18px;
+    font-family:'Play', Arial, Helvetica, sans-serif;
+    font-weight:700;
     cursor:pointer;
     transition:0.2s;
 }
 
 button:hover{
-    background:#ff7b2e;
+    filter:brightness(1.15);
 }
 
 .leaderboard{
@@ -82,7 +112,15 @@ button:hover{
     padding:12px;
     background:#262626;
     margin-top:8px;
-    border-radius:8px;
+    border-radius:0px;
+}
+
+.entry{
+    transition:0.2s;
+}
+
+.entry:hover{
+    background:#333;
 }
 
 .footer{
@@ -97,9 +135,12 @@ button:hover{
 <body>
 
 <header>
-    <h1>REHub</h1>
-    <div class="tagline">
-        experience bandits like (never) before
+    <img src="RHLogo.png" alt="REHub Logo" class="logo">
+    <div class="header-content">
+        <h1>RE:Hub</h1>
+        <div class="tagline">
+            The offical RE:B♤ndits Online Service Platform
+        </div>
     </div>
 </header>
 
